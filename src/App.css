@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .App-logo {
@@ -35,4 +39,48 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button1 {
+  width: 50%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  height: 80%;
+  background-color: rgb(97, 255, 97);
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.button2 {
+  width: 50%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  height: 80%;
+  background-color: rgb(97, 244, 255);
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.textbar {
+  margin: 0 0 0 0;
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+  height: 20%;
+  font-size: 3rem;
+  font-weight: bold;
+  word-wrap: break-word;
 }
