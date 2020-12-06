@@ -26,7 +26,8 @@ class App extends Component {
     if (letter === "1") {
       let tempText = this.state.displayText;
       tempText.pop();
-      tempText.push(" ")
+      if (tempText.length === 0) tempText.push(" ");
+      //tempText.push(" ");
       this.setState({ displayText: tempText, option: "1" });
       window.speechSynthesis.speak(new SpeechSynthesisUtterance("delete letter"));
     } else if (letter === "2") {
