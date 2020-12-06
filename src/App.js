@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 
-let circBuff = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2"];
+let circBuff = ["a","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2"];
 
 class App extends Component {
   constructor() {
