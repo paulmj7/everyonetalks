@@ -16,19 +16,25 @@ class App extends Component {
   handleChangeLetter(event) {
     event.preventDefault();
     let letter = circBuff[0];
+    if (letter === "a" && this.state.option > 1) {
+      this.setState({ option: "0" });
+    }
+    console.log(letter);
     circBuff.shift();
     circBuff.push(letter);
+    console.log(circBuff);
     if (letter === "1") {
       let tempText = this.state.displayText;
       tempText.pop();
+      tempText.push(" ")
       this.setState({ displayText: tempText, option: "1" });
       window.speechSynthesis.speak(new SpeechSynthesisUtterance("delete letter"));
     } else if (letter === "2") {
-      let tempText = this.state.displayText;
-      this.setState({ displayText: tempText, option: "2" });
+      this.setState({ option: "2" });
       window.speechSynthesis.speak(new SpeechSynthesisUtterance("clear screen"));
     } else {
       let tempText = this.state.displayText;
+      console.log(tempText);
       tempText[tempText.length-1] = letter;
       this.setState({ displayText: tempText });
       window.speechSynthesis.speak(new SpeechSynthesisUtterance(letter));
@@ -58,7 +64,7 @@ class App extends Component {
       <div className="App">
         <h1 className="textbar">{this.state.displayText}</h1>
         <button className="button1" onClick={this.handleChangeLetter}>Letter</button>
-        <button className="button2" onClick={this.handleNextLetter}>Space</button>
+        <button className="button2" onClick={this.handleNextLetter}>Enter</button>
       </div>
     )
   }
