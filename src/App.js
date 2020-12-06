@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 
-let circBuff = ["a","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2"];
+let circBuff = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2"];
 
 class App extends Component {
   constructor() {
@@ -22,12 +22,12 @@ class App extends Component {
       let tempText = this.state.displayText;
       tempText.pop();
       this.setState({ displayText: tempText, option: "1" });
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance("DELETE LETTER"));
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance("delete letter"));
     } else if (letter === "2") {
       let tempText = this.state.displayText;
       tempText.pop();
       this.setState({ displayText: tempText, option: "2" });
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance("CLEAR SCREEN"));
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance("clear screen"));
     } else {
       let tempText = this.state.displayText;
       tempText[tempText.length-1] = letter;
@@ -41,12 +41,12 @@ class App extends Component {
       let delText = this.state.displayText;
       delText[delText.length-1] = " ";
       this.setState({ displayText: delText, option: "0" });
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance("Success, current word is"));
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance("success, current word is"));
       window.speechSynthesis.speak(new SpeechSynthesisUtterance(delText.toString()));
     } else if (this.state.option === "2") {
       let clearText = [" "];
       this.setState({ displayText: clearText, option: "0" });
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance("Success, screen is cleared"));
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance("success, screen is cleared"));
     } else {
       let tempText = this.state.displayText;
       tempText.push(" ");
