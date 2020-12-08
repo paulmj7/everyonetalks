@@ -16,8 +16,10 @@ class App extends Component {
   handleChangeLetter(event) {
     event.preventDefault();
     let letter = circBuff[0];
-    if (letter === "a" && this.state.option > 1) {
-      this.setState({ option: "0" });
+    if (letter === "a" && (this.state.option === "1" || this.state.option === "2")) {
+      let tempText = this.state.displayText;
+      tempText.push(" ");
+      this.setState({ displayText: tempText, option: "0" });
     }
     console.log(letter);
     circBuff.shift();
@@ -26,7 +28,6 @@ class App extends Component {
     if (letter === "1") {
       let tempText = this.state.displayText;
       tempText.pop();
-      if (tempText.length === 0) tempText.push(" ");
       this.setState({ displayText: tempText, option: "1" });
       window.speechSynthesis.speak(new SpeechSynthesisUtterance("delete letter"));
     } else if (letter === "2") {
@@ -44,7 +45,7 @@ class App extends Component {
     event.preventDefault();
     if (this.state.option === "1") {
       let delText = this.state.displayText;
-      delText[delText.length-1] = " ";
+      delText.pop();
       this.setState({ displayText: delText, option: "0" });
       window.speechSynthesis.speak(new SpeechSynthesisUtterance("success, current word is"));
       window.speechSynthesis.speak(new SpeechSynthesisUtterance(delText.toString()));
