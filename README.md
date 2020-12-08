@@ -4,6 +4,8 @@ EveryoneTalks is an web app to communicate for those who cannot speak and are vi
 
 ## Usage
 
+Still a work in progress
+
 https://everyonetalks-react.herokuapp.com/
 
 The "Letter" button cycles through letters a-z, with options to delete a letter or to clear the screen, and then cycles back to a-z. To use the delete letter or clear screen functions, simply cycle through using the "Letter" button until the app says "delete letter" or "clear screen", and then hit the "Enter" button. A "success" message will be vocalized.
